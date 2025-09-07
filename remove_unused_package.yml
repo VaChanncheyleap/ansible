@@ -7,3 +7,4 @@
   - name: Remove unused packages
     apt: 
       autoremove: yes
+    when: ansible_distribution == "Ubuntu"

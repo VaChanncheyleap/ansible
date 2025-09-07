@@ -1,3 +1,4 @@
-[all]
-159.138.120.36
-190.92.221.122
+[koi_dev_server]
+159.138.120.36 package_name=sl state=present
+[koi_stage_server]
+190.92.221.122 package_name=sl state=present

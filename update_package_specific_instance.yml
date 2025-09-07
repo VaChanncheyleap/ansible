@@ -5,21 +5,22 @@
   tasks:
 
   - name: Update and upgrade all packages
-    tags: always
     package:
       update_cache: yes
       upgrade: dist
     when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "20.04"
 
+- hosts: koi_dev_server
+  become: true
+  pre_tasks:
+
   - name: Install test package
-    tags: install
     package:
       name: sl
       state: present
     when: ansible_distribution == "Ubuntu"
 
   - name: Remove test package
-    tags: remove
     package:
       name: sl
       state: absent
