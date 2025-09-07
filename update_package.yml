@@ -11,6 +11,15 @@
       upgrade: dist
     when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "20.04"
 
+  - name: Copy script file to server
+    tags: copy
+    copy:
+      src: script.sh
+      dest: .
+      owner: root
+      group: root
+      mode: 644
+
   - name: Install test package
     tags: install
     package:
